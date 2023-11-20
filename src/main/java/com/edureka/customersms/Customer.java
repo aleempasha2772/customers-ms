@@ -1,8 +1,6 @@
 package com.edureka.customersms;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 
@@ -12,10 +10,15 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Table(name = "customer")
 public class Customer {
+
     @Id
-    @GeneratedValue
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer slno;
+    private Integer cid;
     private String name;
     private String email;
+    private Integer isbn;
+
 }
